@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { RemoveSpacePipe } from './remove-space.pipe';
 import { ProductFilterPipe } from './product-filter.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +18,9 @@ import { ProductFilterPipe } from './product-filter.pipe';
     ProductListComponent,
     RemoveSpacePipe,
     ProductFilterPipe,
+    RatingComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

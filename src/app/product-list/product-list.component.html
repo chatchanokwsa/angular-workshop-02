@@ -50,8 +50,15 @@
             <th>{{ product.name | uppercase | removeSpace: "-" }}</th>
             <!-- <th>{{ product.price.toFixed(2) }}</th> -->
             <th>{{ product.price | number: ".2" }}</th>
-            <th>Yes</th>
-            <th>****</th>
+            <th>{{ product.available }}</th>
+            <th>
+              <app-rating
+                [rating]="product.rating"
+                (ratingClicked)="onRatingClicked($event)"
+              >
+                {{ product.rating }}
+              </app-rating>
+            </th>
           </tr>
         </tbody>
 
