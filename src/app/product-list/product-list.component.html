@@ -42,7 +42,11 @@
         </thead>
 
         <tbody *ngIf="products.length > 0">
-          <tr *ngFor="let product of products | productFilter: filterData">
+          <tr
+            *ngFor="let product of products | productFilter: filterData"
+            (click)="moreDetail(product)"
+            [routerLink]="['/product', product.code]"
+          >
             <th>
               XXX
             </th>
@@ -50,7 +54,8 @@
             <th>{{ product.name | uppercase | removeSpace: "-" }}</th>
             <!-- <th>{{ product.price.toFixed(2) }}</th> -->
             <th>{{ product.price | number: ".2" }}</th>
-            <th>{{ product.available }}</th>
+            <th *ngIf="product.available">Yes</th>
+            <th *ngIf="product.available == false">No</th>
             <th>
               <app-rating
                 [rating]="product.rating"

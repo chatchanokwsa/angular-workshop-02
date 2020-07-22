@@ -10,6 +10,7 @@ import { RemoveSpacePipe } from './remove-space.pipe';
 import { ProductFilterPipe } from './product-filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { RatingComponent } from './rating/rating.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RatingComponent } from './rating/rating.component';
     RemoveSpacePipe,
     ProductFilterPipe,
     RatingComponent,
+    ProductDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

@@ -9,6 +9,7 @@ import { ProductService } from './../product.service';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
+  seeDetail: Product;
   filterData = '';
 
   constructor(private service: ProductService) {}
@@ -26,5 +27,9 @@ export class ProductListComponent implements OnInit {
 
   onRatingClicked(message: string): void {
     alert(message);
+  }
+  moreDetail(product: Product): void {
+    console.log('See more detail');
+    this.seeDetail = product;
   }
 }
